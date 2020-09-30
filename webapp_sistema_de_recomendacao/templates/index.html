@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<h1 style="text-align:center;">Sistema de recomendação de carros </h1>
+<div class = "container">
+<table class = " table table-striped table-bordered table-hover table-predictions ">
+    <thead>
+    <tr class = "danger">
+        <th style="text-align:center;">Cars</th>
+        <th style="text-align:center;" >Scores</th>
+    </tr>
+    </thead>
+
+    <tbody style="text-align:center;">
+    {% for prediction in predictions %}
+    <tr>
+        <td><a href="{{prediction.car_link}}">{{prediction.car}}</a></td>
+        <td>{{prediction.score}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>    
+{% endblock content %}
